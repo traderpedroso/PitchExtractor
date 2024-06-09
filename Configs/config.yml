@@ -1,17 +1,18 @@
 log_dir: "Checkpoint"
-save_freq: 10
+save_freq: 5
 device: "cuda"
 epochs: 100
-batch_size: 64
-pretrained_model: ""
-train_data: "Data/train_list.txt"
-val_data: "Data/val_list.txt"
-num_workers: 16
+batch_size: 32
+pretrained_model: "/content/PitchExtractor/Checkpoint/finetune.pth"
+train_data: "/content/Data/train_jdc.txt"
+val_data: "/content/Data/val_jdc.txt"
+rmvpe_path: "rmvpe.pt"
+
+num_workers: 0
 
   
 optimizer_params:
-  lr: 0.0003
+  lr: 0.0001
   
 loss_params:
-  lambda_f0: 0.1
-  
+  lambda_f0: 0.001
